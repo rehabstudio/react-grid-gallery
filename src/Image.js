@@ -113,7 +113,7 @@ class Image extends Component {
 
     tileDescriptionStyle () {
       if (this.props.tileDescriptionStyle)
-          return this.props.tileDescriptionStyle;
+          return this.props.tileDescriptionStyle.call(this);
 
       return {
           background: "white",
