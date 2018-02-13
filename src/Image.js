@@ -49,7 +49,7 @@ class Image extends Component {
     thumbnailStyle () {
         if (this.props.thumbnailStyle)
             return this.props.thumbnailStyle.call(this);
-            
+
         var rotationTransformValue = undefined;
         switch (this.props.item.orientation) {
             case 3:
@@ -109,6 +109,22 @@ class Image extends Component {
             marginTop: 0,
             transform: rotationTransformValue
         };
+    }
+
+    tileDescriptionStyle () {
+      if (this.props.tileDescriptionStyle)
+          return this.props.tileDescriptionStyle;
+
+      return {
+          background: "white",
+          height: "100%",
+          width: "100%",
+          margin: 0,
+          userSelect: "text",
+          WebkitUserSelect: "text",
+          MozUserSelect: "text",
+          overflow: "hidden"
+      };
     }
 
     renderCheckButton () {
@@ -219,16 +235,7 @@ class Image extends Component {
                 </div>
                 {this.props.item.thumbnailCaption && (
                         <div className="tile-description"
-                    style={{
-                        background: "white",
-                        height: "100%",
-                        width: "100%",
-                        margin: 0,
-                        userSelect: "text",
-                        WebkitUserSelect: "text",
-                        MozUserSelect: "text",
-                        overflow: "hidden"
-                    }}>
+                    style={this.tileDescriptionStyle()}>
                         {this.props.item.thumbnailCaption}
                     </div>
                 )}
