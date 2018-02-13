@@ -178,7 +178,7 @@ class Image extends Component {
                 WebkitUserSelect: "none",
                 position: "relative",
                 float: "left",
-                background: "#eee",
+                background: this.props.background || "#eee",
                 padding: "0px"}}>
 
                 <div className="tile-icon-bar"

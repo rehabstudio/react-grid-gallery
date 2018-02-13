@@ -242,6 +242,7 @@ class Gallery extends Component {
             index={idx}
             margin={this.props.margin}
             height={this.props.rowHeight}
+            background={this.props.background}
             isSelectable={this.props.enableImageSelection}
             onClick={this.getOnClickThumbnailFn()}
             onSelectImage={this.onSelectImage}
